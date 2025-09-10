@@ -1,0 +1,80 @@
+[
+  {
+    "category": "Sales",
+    "widgets": [
+      { 
+        "title": "Revenue", 
+        "component": "Chart",
+        "data": {
+          "labels": ["Product A", "Product B", "Product C"],
+          "series": [120, 90, 150],
+          "colors": ["#0088FE", "#00C49F", "#FFBB28"]
+        }
+      },
+      { 
+        "title": "Fund", 
+        "component": "Chart",
+        "data": {
+          "labels": ["Equity", "Debt", "Cash"],
+          "series": [200, 100, 50],
+          "colors": ["#FF8042", "#A020F0", "#00C49F"]
+        }
+      },
+      { 
+        "title": "Growth", 
+        "component": "Chart",
+        "data": {
+          "labels": ["Q1", "Q2", "Q3", "Q4"],
+          "series": [30, 45, 60, 80],
+          "colors": ["#FFBB28", "#FF8042", "#0088FE", "#00C49F"]
+        }
+      }
+    ]
+  },
+  {
+    "category": "Users",
+    "widgets": [
+      { 
+        "title": "Active Users", 
+        "component": "Chart",
+        "data": {
+          "labels": ["Active", "Inactive"],
+          "series": [300, 120],
+          "colors": ["#00C49F", "#FF8042"]
+        }
+      },
+      { 
+        "title": "New Users", 
+        "component": "Chart",
+        "data": {
+          "labels": ["This Week", "Last Week"],
+          "series": [150, 100],
+          "colors": ["#0088FE", "#FFBB28"]
+        }
+      }
+    ]
+  },
+  {
+    "category": "Performance",
+    "widgets": [
+      { 
+        "title": "Server Uptime", 
+        "component": "Chart",
+        "data": {
+          "labels": ["Online", "Downtime"],
+          "series": [99, 1],
+          "colors": ["#00C49F", "#FF0000"]
+        }
+      },
+      { 
+        "title": "Response Time", 
+        "component": "Chart",
+        "data": {
+          "labels": ["<200ms", "200-500ms", ">500ms"],
+          "series": [70, 20, 10],
+          "colors": ["#00C49F", "#FFBB28", "#FF8042"]
+        }
+      }
+    ]
+  }
+]
