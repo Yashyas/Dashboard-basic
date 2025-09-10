@@ -29,7 +29,7 @@ function HistoryButton({
         <div className="w-px h-8 bg-primary" />
 
         {/* Label */}
-        <span className="font-medium">Last update</span>
+        <span className="font-medium hidden md:block">Last update</span>
 
         {/* Chevron */}
         <svg

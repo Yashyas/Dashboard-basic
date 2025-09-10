@@ -46,7 +46,7 @@ function Categories() {
             ))}
 
             {/* Extra empty widget */}
-            <Widget title="Empty Widget" />
+            <Widget title="" />
           </div>
         </div>
       ))}
