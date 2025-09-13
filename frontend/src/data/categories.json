@@ -1,50 +1,37 @@
 [
   {
-    "category": "Sales",
+    "category": "CSPM ",
     "widgets": [
       { 
-        "title": "Revenue", 
+        "title": "Cloud Accounts", 
         "component": "Chart",
         "data": {
-          "labels": ["Product A", "Product B", "Product C"],
-          "series": [120, 90, 150],
-          "colors": ["#0088FE", "#00C49F", "#FFBB28"]
+          "labels": ["Connected", "Not Connected"],
+          "series": [2, 2],
+          "colors": ["#c6b9fa","#795bf5"]
         }
       },
       { 
-        "title": "Fund", 
+        "title": "Cloud Account Risk Assessment", 
         "component": "Chart",
         "data": {
-          "labels": ["Equity", "Debt", "Cash"],
-          "series": [200, 100, 50],
-          "colors": ["#FF8042", "#A020F0", "#00C49F"]
-        }
-      },
-      { 
-        "title": "Growth", 
-        "component": "Chart",
-        "data": {
-          "labels": ["Q1", "Q2", "Q3", "Q4"],
-          "series": [30, 45, 60, 80],
-          "colors": ["#FFBB28", "#FF8042", "#0088FE", "#00C49F"]
+          "labels": ["Passed", "Failed", "Warning","Not Available"],
+          "series": [200, 30, 20 ,10],
+          "colors": ["#249126", "#fc3426", "#fcf526","#0088FE"]
         }
       }
     ]
   },
   {
-    "category": "Users",
+    "category": "CWPP",
     "widgets": [
       { 
-        "title": "Active Users", 
-        "component": "Chart",
-        "data": {
-          "labels": ["Active", "Inactive"],
-          "series": [300, 120],
-          "colors": ["#00C49F", "#FF8042"]
-        }
+        "title": "Top 5 Namespace Specific Alerts", 
+        "component": "Chart"
+        
       },
       { 
-        "title": "New Users", 
+        "title": "Workload Alerts", 
         "component": "Chart",
         "data": {
           "labels": ["This Week", "Last Week"],
@@ -55,30 +42,7 @@
     ]
   },
   {
-    "category": "Performance",
-    "widgets": [
-      { 
-        "title": "Server Uptime", 
-        "component": "Chart",
-        "data": {
-          "labels": ["Online", "Downtime"],
-          "series": [99, 1],
-          "colors": ["#00C49F", "#FF0000"]
-        }
-      },
-      { 
-        "title": "Response Time", 
-        "component": "Chart",
-        "data": {
-          "labels": ["<200ms", "200-500ms", ">500ms"],
-          "series": [70, 20, 10],
-          "colors": ["#00C49F", "#FFBB28", "#FF8042"]
-        }
-      }
-    ]
-  },
-  {
-    "category": "Security",
+    "category": "Registry Scan",
     "widgets": [
       {
         "title": "Image Risk Assessment",
@@ -90,7 +54,7 @@
         }
       },
       {
-        "title": "Vulnerability Overview",
+        "title": "Image security issues",
         "component": "RiskGraph",
         "data": {
           "labels": ["Critical", "High", "Medium", "Low"],

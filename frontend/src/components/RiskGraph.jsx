@@ -49,7 +49,7 @@ function RiskGraph({ data }) {
     <div className="w-full h-full flex flex-col justify-between">
       {/* Total vulnerabilities */}
       <div className="flex items-baseline gap-2 mb-2">
-        <span className="text-2xl font-bold">{total}</span>
+        <span className="text-xl font-bold">{total}</span>
         <span className="text-gray-500 text-sm sm:text-base">
           Total Vulnerabilities
         </span>
@@ -67,7 +67,7 @@ function RiskGraph({ data }) {
       </div>
 
       {/* Custom Legend */}
-      <div className="flex flex-wrap gap-3 mt-2 text-sm sm:text-base">
+      <div className="flex flex-wrap gap-3 mt-2 text-xs ">
         {labels.map((label, idx) => (
           <div key={idx} className="flex items-center">
             <span

@@ -2,7 +2,27 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 
 function Chart({ data }) {
-  if (!data) return <p>No data</p>;
+  if (!data || data.series.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center h-64 text-gray-400">
+        {/* Example blank chart SVG */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-16 h-16 mb-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          <path d="M9 17V9M15 17V13" />
+        </svg>
+
+        {/* No Data Logo/Text */}
+        <p className="text-lg font-semibold">No Data Available</p>
+      </div>
+    );
+  }
 
   const options = {
     chart: {
