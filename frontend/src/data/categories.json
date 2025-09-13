@@ -76,5 +76,28 @@
         }
       }
     ]
+  },
+  {
+    "category": "Security",
+    "widgets": [
+      {
+        "title": "Image Risk Assessment",
+        "component": "RiskGraph",
+        "data": {
+          "labels": ["Critical", "High", "Medium", "Low"],
+          "series": [9, 150, 500, 811],
+          "colors": ["#8B0000", "#FF0000", "#FFA500", "#FFD700"]
+        }
+      },
+      {
+        "title": "Vulnerability Overview",
+        "component": "RiskGraph",
+        "data": {
+          "labels": ["Critical", "High", "Medium", "Low"],
+          "series": [5, 80, 300, 600],
+          "colors": ["#8B0000", "#FF0000", "#FFA500", "#FFD700"]
+        }
+      }
+    ]
   }
 ]

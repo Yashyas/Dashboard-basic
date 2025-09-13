@@ -1,5 +1,6 @@
 import React from "react";
 import Chart from "../components/Chart";
+import RiskGraph from "../components/RiskGraph";
 import Widget from "../components/Widget";
 import DashboardNav from "../components/DashboardNav";
 import useCategoriesStore from "../store/store";
@@ -9,10 +10,14 @@ function Categories() {
 
   // helper to render the right component
   const renderComponent = (widget) => {
-    if (widget.component === "Chart") {
-      return <Chart data={widget.data} />;
+    switch (widget.component) {
+      case "Chart":
+        return <Chart data={widget.data} />;
+      case "RiskGraph":
+        return <RiskGraph title={widget.title} data={widget.data} />;
+      default:
+        return null;
     }
-    return null; // fallback for future components
   };
 
   return (
