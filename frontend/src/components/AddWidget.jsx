@@ -48,7 +48,15 @@ function AddWidget() {
       {/* Drawer Content */}
       <div className="drawer-side">
         <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-        <div className="bg-base-200 text-base-content min-h-full w-96 p-4">
+        <div className="bg-base-200 text-base-content min-h-full w-96 p-4 relative">
+          {/* ❌ Close Button for Drawer */}
+          <label
+            htmlFor="my-drawer-4"
+            className="btn btn-sm btn-circle absolute right-4 top-4"
+          >
+            ✕
+          </label>
+
           <h2 className="text-lg font-bold mb-4">Add Widget</h2>
 
           {/* Tabs for categories */}
@@ -91,7 +99,7 @@ function AddWidget() {
           <div className="fixed bottom-8 right-8 flex flex-col gap-4">
             {/* Add Category FAB */}
             <button
-              className="btn  btn-primary"
+              className="btn btn-primary"
               onClick={() => setShowCategoryModal(true)}
             >
               + Add Category
@@ -99,7 +107,7 @@ function AddWidget() {
 
             {/* Add Widget FAB */}
             <button
-              className="btn  btn-secondary"
+              className="btn btn-secondary"
               onClick={() => setShowWidgetModal(true)}
             >
               + Add Widget
@@ -109,7 +117,15 @@ function AddWidget() {
           {/* Category Modal */}
           {showCategoryModal && (
             <div className="modal modal-open">
-              <div className="modal-box">
+              <div className="modal-box relative">
+                {/* ❌ Close Button for Modal */}
+                <button
+                  className="btn btn-sm btn-circle absolute right-4 top-4"
+                  onClick={() => setShowCategoryModal(false)}
+                >
+                  ✕
+                </button>
+
                 <h3 className="font-bold text-lg mb-4">Add New Category</h3>
                 <input
                   type="text"
@@ -147,7 +163,15 @@ function AddWidget() {
           {/* Widget Modal */}
           {showWidgetModal && (
             <div className="modal modal-open">
-              <div className="modal-box">
+              <div className="modal-box relative">
+                {/* ❌ Close Button for Modal */}
+                <button
+                  className="btn btn-sm btn-circle absolute right-4 top-4"
+                  onClick={() => setShowWidgetModal(false)}
+                >
+                  ✕
+                </button>
+
                 <h3 className="font-bold text-lg mb-4">Add New Widget</h3>
                 <select
                   className="select select-bordered w-full mb-4"
@@ -176,7 +200,7 @@ function AddWidget() {
                         const newWidget = {
                           title: newWidgetTitle,
                           component: "Chart",
-                          data: { labels: [], series: [], colors: [] },
+                          // data: { labels: [], series: [], colors: [] },
                         };
                         addWidget(selectedCategory, newWidget);
                         activateWidget(newWidget, selectedCategory);
