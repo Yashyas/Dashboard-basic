@@ -22,6 +22,10 @@ function Chart({ data }) {
     ],
     legend: {
       position: "right",
+      labels: {
+        // assign currentColor for each series dynamically
+        colors: data.series.map(() => "currentColor"),
+      },
       markers: {
         shape: "circle",
       },
@@ -30,6 +34,7 @@ function Chart({ data }) {
         return `${seriesName} (${value})`;
       },
     },
+
     plotOptions: {
       pie: {
         donut: {
@@ -38,22 +43,23 @@ function Chart({ data }) {
             show: true,
             name: {
               show: true,
-              offsetY: 20, // pushes "Total" below
+              offsetY: 20,
+              color: "currentColor", // uses parent text color
             },
             value: {
               show: true,
               fontSize: "20px",
               fontWeight: "bold",
-              offsetY: -10, // pulls number above
+              offsetY: -10,
+              color: "currentColor",
             },
             total: {
               show: true,
               label: "Total",
               fontSize: "12px",
-              color: "#333",
-              formatter: (w) => {
-                return w.globals.seriesTotals.reduce((a, b) => a + b, 0);
-              },
+              color: "currentColor",
+              formatter: (w) =>
+                w.globals.seriesTotals.reduce((a, b) => a + b, 0),
             },
           },
         },
@@ -62,7 +68,7 @@ function Chart({ data }) {
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center text-base-content">
       <ReactApexChart
         options={options}
         series={data.series}

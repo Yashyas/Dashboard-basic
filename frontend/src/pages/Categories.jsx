@@ -6,9 +6,9 @@ import DashboardNav from "../components/DashboardNav";
 import useCategoriesStore from "../store/store";
 
 function Categories() {
-  const { categories } = useCategoriesStore();
+  const { activeWidgets } = useCategoriesStore();
 
-  // helper to render the right component
+  // Helper to render the right component
   const renderComponent = (widget) => {
     switch (widget.component) {
       case "Chart":
@@ -20,20 +20,29 @@ function Categories() {
     }
   };
 
+  // Group widgets by category for display
+  const groupedWidgets = activeWidgets.reduce((acc, w) => {
+    if (!acc[w.category]) acc[w.category] = [];
+    acc[w.category].push(w);
+    return acc;
+  }, {});
+
   return (
     <>
       <DashboardNav />
       <div className="p-8 space-y-8 bg-base-300">
-        {categories.map((category, idx) => (
+        {Object.entries(groupedWidgets).map(([categoryName, widgets], idx) => (
           <div key={idx}>
-            <h2 className="text-xl font-bold mb-4">{category.category}</h2>
+            <h2 className="text-xl font-bold mb-4">{categoryName}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {category.widgets.map((w, i) => (
-                <Widget key={i} title={w.title} component={renderComponent(w)} />
+              {widgets.map((w, i) => (
+                <Widget
+                  key={i}
+                  title={w.title}
+                  component={renderComponent(w)}
+                />
               ))}
-
-              {/* Always render extra empty widget */}
-              <Widget title="" />
+              <Widget title="" /> {/* optional empty widget for spacing */}
             </div>
           </div>
         ))}
